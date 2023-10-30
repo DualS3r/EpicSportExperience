@@ -1,0 +1,40 @@
+.pIndex2{
+  position: relative;
+  z-index: 2;
+}
+
+.fondWhite{
+  background-color: white;
+}
+
+.fondBlue{
+  background-color: #028def;
+}
+
+.form{
+  padding-top: 10vh;
+}
+
+.buttonPrinc{
+  background-color: black;
+  padding: 1vh 2vw;
+  color: white;
+  border: 0;
+  border-radius: 1.5rem;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.buttonPrinc:hover{
+  background-color: #028df0;
+  color: white;
+  transform: scale(105%);
+}
+
+.text_area{
+  height: 10vh;
+}
+
+
+
+

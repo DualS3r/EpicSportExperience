@@ -1,0 +1,299 @@
+$main-blue: #0076bd !default;
+$main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
+
+.intro {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("/assets/media/images/fondoIntro.svg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+
+  .filterBlack {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.138);
+    color: white;
+
+    h1{
+      font-size: clamp(48px, 4vw , 60px);
+      text-shadow: 0 0 10px black;
+    }
+
+    p{
+      font-size: clamp(32px, 3vw , 48px);
+      text-shadow: 0 0 10px black;
+      margin: 0;
+    }
+
+
+  }
+  
+  
+ 
+
+}
+
+/* HOME SECCION 1 */
+
+.fondWhite{
+  background-color: white;
+}
+
+.homesection1{
+  padding: 10vh 0;
+  background-color: white;
+  
+
+  video{
+    width: 30vw;
+  }
+
+  .formIco{
+    width: 50px;
+
+
+  }
+}
+
+/* HOME SECCION 2 */
+
+.fondBlue{
+  background-color: #028def;
+}
+
+.fondInfo{
+  padding: 5vh 0;
+  color: white;
+}
+
+/* HOME SECCION 3 */
+.fondLocalitys{
+  padding: 10vh 0;
+
+  .imgForm{
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+    object-position: center;
+  }
+
+.profile-card-2 {
+    max-width: 300px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 20px ;
+    
+}
+
+.profile-card-2 img {
+    transition: all linear 0.25s;
+    
+}
+
+.profile-card-2 .profile-name {
+    position: absolute;
+    left: 30px;
+    bottom: 70px;
+    font-size: 30px;
+    color: #FFF;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    transition: all linear 0.25s;
+}
+
+.profile-card-2 .profile-icons {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    color: #FFF;
+    transition: all linear 0.25s;
+}
+
+.profile-card-2 .profile-username {
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+    color: #FFF;
+    font-size: 13px;
+    transition: all linear 0.25s;
+}
+
+.profile-card-2 .profile-icons .fa {
+    margin: 5px;
+}
+
+.profile-card-2:hover img {
+    filter: grayscale(100%);
+}
+
+.profile-card-2:hover .profile-name {
+    bottom: 80px;
+}
+
+.profile-card-2:hover .profile-username {
+    bottom: 60px;
+}
+
+.profile-card-2:hover .profile-icons {
+    right: 40px;
+}
+}
+
+/* HOME SECCION 4 */
+
+.fondTitleExperiences{
+  padding: 0 0 5vh 0;
+}
+.fondExperiences{
+  padding: 5vh 0 10vh 0;
+
+/* Cards */
+.postcard {
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+  
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  border-radius: 10px;
+  margin: 0 0 2rem 0;
+  overflow: hidden;
+  position: relative;
+  color: #ffffff;
+
+  .imgForm{
+    width: 100%;
+    height: 25vh;
+    object-fit: cover;
+    object-position: center;
+  }
+
+	&.dark {
+		background-color: #18151f;
+	}
+	&.light {
+		background-color: #e1e5ea;
+	}
+	
+	.t-dark {
+		color: #18151f;
+	}
+	
+  a {
+    color: inherit;
+  }
+	
+	h1,	.h1 {
+		margin-bottom: 0.5rem;
+		font-weight: 500;
+		line-height: 1.2;
+	}
+	
+	.small {
+		font-size: 80%;
+	}
+
+  .postcard__title {
+    font-size: 1.75rem;
+  }
+
+  .postcard__img {
+    max-height: 350px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+  }
+
+  .postcard__img_link {
+    display: contents;
+  }
+
+  .postcard__bar {
+    width: 50px;
+    height: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #424242;
+    transition: width 0.2s ease;
+  }
+
+  .postcard__text {
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .postcard__preview-txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: justify;
+    height: 100%;
+  }
+
+  .postcard__tagbox {
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 14px;
+    margin: 20px 0 0 0;
+		padding: 0;
+    justify-content: center;
+
+    .tag__item {
+      display: inline-block;
+      background: rgba(83, 83, 83, 0.4);
+      border-radius: 3px;
+      padding: 2.5px 10px;
+      margin: 0 5px 5px 0;
+      cursor: default;
+      user-select: none;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background: rgba(83, 83, 83, 0.8);
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(-70deg, #424242, transparent 50%);
+    opacity: 1;
+    border-radius: 10px;
+  }
+
+  &:hover .postcard__bar {
+    width: 100px;
+  }
+}
+
+
+.postcard .postcard__tagbox .blue.play:hover {
+	background: $main-blue;
+}
+.blue .postcard__title:hover {
+	color: $main-blue;
+}
+.blue .postcard__bar {
+	background-color: $main-blue;
+}
+.blue::before {
+	background-image: linear-gradient(-30deg, $main-blue-rgb-015, transparent 50%);
+}
+.blue:nth-child(2n)::before {
+	background-image: linear-gradient(30deg, $main-blue-rgb-015, transparent 50%);
+}
+
+
+}

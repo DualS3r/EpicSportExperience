@@ -1,0 +1,81 @@
+<%- include("start") %>
+<%- include("navbar") %>
+
+<main >
+
+    <!-- createLocalitySección 1: Intro -->
+    <section class = "createLocalitySeccion1 img1 p-0 container-fluid">
+        <div class = "filterBlack m-0 row align-items-center">
+            <div class="col-12 text-center" >
+                <h1>MODIFICA TU EXPERIENCIA</h1>
+                <p>¡Mejora el turismo!</p>
+                <div id = "about"></div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- createLocalitySección 2: Formulario-->
+    <section class = "createLocalitySeccion2 container-fluid d-flex justify-content-center align-items-center pb-5" >
+        <div class = "container d-flex align-items-center justify-content-center" >
+                    <form action="/experience/modifExperience/<%= locality_id %>/<%= result[0].experience_id %>" method="post" enctype="multipart/form-data">
+
+                        <div class="row mb-4">
+                            <div class="col-12 col-sm">
+                                <input type="text" name="title" id="titulo" class="form-control" value="<%= result[0].title %>"/>
+                                <label class="form-label" for="titulo">Titulo</label>
+                                <span class = "text-danger"><%= typeof message1 != "undefined" ? message1: null %></span>
+                            </div>
+                            <div class="col-12 col-sm">
+                                <select class="form-control" name="type_activitie" id="tipoActividad">
+                                    <option value="<%= result[0].type_activitie %>"><%= result[0].type_activitie %></option>
+                                    <option value="Barranco">Descenso de Barranco</option>
+                                    <option value="Surf">Surf</option>
+                                    <option value="PaddleSurf">PaddleSurf</option>
+                                    <option value="Paracaidismo">Paracaidismo</option>
+                                    <option value="Rafting">Rafting</option>
+                                    <option value="Esqui">Esqui</option>
+                                    <option value="Snow">Snow</option>
+                                    <option value="Buceo/Snorkel">Buceo/Snorkel</option>
+                                    <option value="Kayak">Kayak</option>
+                                    <option value="Rutas a caballo">Rutas a caballo</option>
+                                    <option value="SkySurf">SkySurf</option>
+                                    <option value="Otras">Otras</option>
+                                </select>
+                                <label class="form-label" for="tipoActividad">Tipo de actividad</label>
+                                <span class = "text-danger"><%= typeof message2 != "undefined" ? message2: null %></span>
+                                </div>
+                        </div>
+                        <div class="mb-4">
+                            <input type="text" name="town" id="municipio" class="form-control" value="<%= result[0].town %>"/>
+                            <label class="form-label" for="municipio">Município</label>
+                            <span class = "text-danger"><%= typeof message3 != "undefined" ? message3: null %></span>
+                        </div>
+                        <div class="mb-4">
+                            <input type="text" name="street" id="direccion" class="form-control" value="<%= result[0].street %>"/>
+                            <label class="form-label" for="direccion">Dirección</label>
+                            <span class = "text-danger"><%= typeof message4 != "undefined" ? message4: null %></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <input type="text" name="experience_description" id="descripcion" class="text_area form-control" value="<%= result[0].experience_description %>" size="255" maxlength="255"/>
+                            <label class="form-label" for="descripcion">Descripción</label>
+                            <span class = "text-danger"><%= typeof message5 != "undefined" ? message5: null %></span>
+                        </div>
+                    
+                        <div class="mb-4">
+                            <label class="form-label" for="imagen">Subir imagen...</label>
+                            <input type="file" name="img" id="imagen" class="form-control" />
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary btn-block mb-4 ">Guardar cambios</button>
+                    </form>
+
+        </div>
+        
+    </section>
+
+</main>
+
+<%- include("footer") %>
+<%- include("end") %>

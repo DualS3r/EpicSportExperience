@@ -1,0 +1,135 @@
+<%- include("start") %>
+<%- include("navbar") %>
+
+
+<main>
+    
+<!-- LocalitySeccion3 1: Intro -->
+<section class = "homeSeccion1 p-0 container-fluid">
+    <div class = "filterBlack m-0 row align-items-center">
+        <div class="col-12 text-center" >
+            <h1><%= result[0].name %></h1>
+            <p><%= result[0].province %></p>
+            <div id = "about"></div>
+        </div>
+    </div>
+  </section>
+
+    <!-- LocalitySeccion3 3: Información-->
+    <section class = "homeSeccion3 container-fluid p-0 m-0">
+      <div id = "experience"></div>
+      <div class = "formBlack row p-0 py-sm-5 m-0 text-center flex-column justify-content-center align-items-center">
+          <div class="col-12 col-sm-4 p-0">
+            <% if (result[0].locality_img != null){ %>
+              <img class="imgFormat" src="/assets/media/images/localitys/<%= result[0].locality_img %>" alt="">
+            <% } else { %>
+              <img class="imgFormat" src="/assets/media/images/localitys/default.webp" alt="">
+            <% } %>
+
+          </div>
+          <div class="col-12 col-sm-4 mt-5" >
+              <h2><%= result[0].name %></h2>
+              <h3><%= result[0].province %></h3>
+              <h3><%= result[0].phone %></h3>
+              <h3><%= result[0].email %></h3>
+              <p><%= result[0].description %></p>
+              <div>
+                <a href="/locality/login/profile/modifLocality/<%= result[0].locality_id %>">
+                  <button class = "buttonPrinc">Editar</button>
+                </a>
+                <a href="/locality/login/profile/deleteLocality/<%= result[0].locality_id %>">
+                  <button class = "buttonPrinc">Borrar</button>
+                </a>
+              </div>
+          </div>
+            
+      </div>
+      
+  </section>
+
+    <!-- homeSección 4: Categorias-->
+    <section class = "container-fluid pIndex2 fondWhite">
+      <div class="fondTitleExperiences row ">
+        <div class = "col m-3 d-flex flex-column justify-content-center text-center">
+          <h2>TODAS NUESTRAS EXPERIENCIAS</h2>
+          <div>
+            <a href="/experience/createExperience/<%= result[0].locality_id %>">
+              <button class = "buttonPrinc">Añadir nueva experiencia</button>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+      <div class = "fondExperiences row justify-content-center">
+            <% result.forEach ((experience) => { %>
+              <% if (experience.experience_id != null) { %>
+                <% if (experience.experience_img != null) { %>
+                    <div class="col-12 col-lg-5 d-flex justify-content-center">
+                        <article class="postcard dark blue">
+                        <a class="postcard__img_link" href="/experience/<%= experience.experience_id %>">
+                            <img class="postcard__img" src="/assets/media/images/experiences/<%= experience.experience_img %>" alt="experiencia <%= experience.experience_id %>" />
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title blue"><a href="/experience/<%= experience.experience_id %>"><%= experience.title %></a></h1>
+                            <div class="postcard__subtitle small">
+                                <i class="fas fa-calendar-alt mr-2"></i><%= experience.town %>
+                            </div>
+                            
+                            <div class="postcard__bar"></div>
+                            <div class="postcard__preview-txt">
+                              <%= experience.experience_description %>
+                            </div>
+                            <ul class="postcard__tagbox d-flex justify-content-start">
+                              <li class="tag__item"><i class="fas  fa-tag mr-2"></i><%= experience.type_activitie %></li>
+                            </ul>
+                            <div class = "d-flex ">
+                                <a href="/experience/modifExperience/<%= result[0].locality_id %>/<%= experience.experience_id %>">
+                                  <button class = "buttonPrinc mb-3">Editar</button>
+                                </a>
+                                <a href="/experience/deleteExperience/<%= result[0].locality_id %>/<%= experience.experience_id %>">
+                                  <button class = "buttonPrinc">Borrar</button>
+                                </a>
+                            </div>
+                        </div>
+                        </article>
+                    </div>
+                <% } else { %>
+                    <div class="col-12 col-lg-5 d-flex justify-content-center">
+                        <article class="postcard dark blue">
+                        <a class="postcard__img_link" href="/experience/<%= experience.experience_id %>">
+                            <img class="postcard__img" src="/assets/media/images/experiences/default.webp" alt="experiencia <%= experience.experience_id %>" />
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title blue"><a href="/experience/<%= experience.experience_id %>"><%= experience.title %></a></h1>
+                            <div class="postcard__subtitle small">
+                                <i class="fas fa-calendar-alt mr-2"></i><%= experience.town %> 
+                            </div>
+                            
+                            <div class="postcard__bar"></div>
+                            <div class="postcard__preview-txt">
+                              <%= experience.experience_description %>
+                            </div>
+                            <ul class="postcard__tagbox d-flex justify-content-start">
+                              <li class="tag__item"><i class="fas  fa-tag mr-2"></i><%= experience.type_activitie %></li>
+                            </ul>
+                            <div class = "d-flex">
+                              <a href="/experience/modifExperience/<%= result[0].locality_id %>/<%= experience.experience_id %>">
+                                <button class = "buttonPrinc mb-3">Editar</button>
+                              </a>
+                              <a href="/experience/deleteExperience/<%= result[0].locality_id %>/<%= experience.experience_id %>">
+                                <button class = "buttonPrinc">Borrar</button>
+                              </a>
+                            </div>
+                        </div>
+                        </article>
+                    </div>
+                <% } %>
+              <% } %>
+            <% }) %> 
+        </div>
+    </section>
+    
+</main>
+
+<%- include("footer") %>
+<%- include("end") %>

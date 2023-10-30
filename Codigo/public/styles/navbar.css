@@ -1,0 +1,30 @@
+.navbar {
+  height: 100px;
+  background-color: white;
+  box-shadow: 0px 3px 5px 0px black;
+}
+.navbar .formLogoNav {
+  width: clamp(250px, 10vw, 300px);
+}
+.navbar .nav-link:hover {
+  color: #028df0;
+  font-weight: bold;
+  text-decoration: underline;
+  transform: scale(102%);
+}
+.navbar .fet {
+  background-color: white;
+}
+.navbar .buttonPrinc {
+  background-color: black;
+  color: white;
+  border: 0;
+  border-radius: 1.5rem;
+  font-weight: bold;
+  transition: 0.5s;
+}
+.navbar .buttonPrinc:hover {
+  background-color: #028df0;
+  color: white;
+  transform: scale(105%);
+}/*# sourceMappingURL=navbar.css.map */

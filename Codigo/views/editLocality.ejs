@@ -1,0 +1,71 @@
+<%- include("start") %>
+<%- include("navbar") %>
+
+<main >
+
+    <!-- createLocalitySección 1: Intro -->
+    <section class = "createLocalitySeccion1 img4 p-0 container-fluid">
+        <div class = "filterBlack m-0 row align-items-center">
+            <div class="col-12 text-center" >
+                <h1>MODIFICA TU LOCALIDAD</h1>
+                <p>¡Mejora el turismo!</p>
+                <div id = "about"></div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- createLocalitySección 2: Formulario-->
+    <section class = "createLocalitySeccion2 container-fluid d-flex justify-content-center align-items-center pb-5" >
+        <div class = "container d-flex align-items-center justify-content-center" >
+                    <form action="/locality/login/profile/modifLocality/<%= result[0].locality_id %>" method="post" enctype="multipart/form-data">
+                    
+                        <div class="mb-4">
+                        <label class="form-label" for="provincia"></label>
+                        <select class="form-control" name="province" id="provincia">
+                            <option value="<%= result[0].province %>"><%= result[0].province %></option>
+                            <option value="malaga">Málaga</option>
+                            <option value="cordoba">Cordoba</option>
+                            <option value="granada">Granada</option>
+                            <option value="sevilla">Sevilla</option>
+                            <option value="huelva">Huelva</option>
+                            <option value="jaen">Jaén</option>
+                            <option value="cadiz">Cádiz</option>
+                            <option value="almeria">Almeria</option>
+                        </select>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-12 col-sm">
+                                <input type="text" name="name" id="Localidad" class="form-control" value="<%= result[0].name %>"/>
+                                <label class="form-label" for="Localidad">Localidad</label>
+                                <span class = "text-danger"><%= typeof message1 != "undefined" ? message1: null %></span>
+                            </div>
+                            <div class="col-12 col-sm">
+                                <input class="form-control" type="text" name="phone" id="telefono" value="<%= result[0].phone %>" />
+                                <label class="form-label" for="telefono">Telefono de contacto</label>
+                                <span class = "text-danger"><%= typeof message2 != "undefined" ? message2: null %></span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <input type="text" name="description" id="descripcion" class="text_area form-control" value="<%= result[0].experience_description %>" maxlength="255"/>
+                            <label class="form-label" for="descripcion">Descripción</label>
+                            <span class = "text-danger"><%= typeof message5 != "undefined" ? message5: null %></span>
+                        </div>
+                    
+                        <div class="mb-4">
+                        <input type="file" name="img" id="imagen" class="form-control" />
+                        <label class="form-label" for="imagen"></label>
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary btn-block mb-4 ">Guardar cambios</button>
+                    </form>
+
+        </div>
+        
+    </section>
+
+</main>
+
+<%- include("footer") %>
+<%- include("end") %>

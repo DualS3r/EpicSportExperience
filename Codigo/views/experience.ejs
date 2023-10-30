@@ -1,0 +1,50 @@
+<%- include("start") %>
+<%- include("navbar") %>
+
+
+<main>
+  <section class = "container-fluid">
+
+    <div class = "fondOneExperiences row justify-content-center">
+      <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
+        <% if(result[0].experience_img != undefined){ %>
+          <img class="imgForm" src="/assets/media/images/experiences/<%= result[0].experience_img %>" alt="experiencia <%= result[0].experience_id %>" />
+        <% } else { %>
+          <img class="imgForm" src="/assets/media/images/experiences/default.webp" alt="experiencia <%= result[0].experience_id %>" />
+        <% } %>
+        
+
+        <article class="postcardExperience dark blue">
+          <div class="postcardExperience__text">
+            <ul class="postcardExperience__tagbox d-flex justify-content-start">
+              <li class="tag__item"><i class="fas  fa-tag mr-2"></i><%= result[0].type_activitie %></li>
+            </ul>
+            <h1 class="postcardExperience__title blue">
+              <%= result[0].title %>
+            </h1>
+            <div class="postcardExperience__subtitle small">
+              <i class="fas fa-calendar-alt mr-2"></i><%= result[0].town %>
+            </div>
+            <div class="postcardExperience__subtitle small">
+              <i class="fas fa-calendar-alt mr-2"></i><%= result[0].street %>
+            </div>
+                      
+            <div class="postcardExperience__bar"></div>
+            <div class="postcardExperience__preview-txt">
+              <%= result[0].experience_description %>
+            </div>
+            
+          </div>
+        </article>
+        <div class = "d-flex my-5 justify-content-center">
+          <a href="/#experience"><button class = "buttonPrinc">Volver a inicio</button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<%- include("footer") %>
+<%- include("end") %>

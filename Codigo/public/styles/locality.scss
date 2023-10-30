@@ -1,0 +1,22 @@
+.imgFormat{
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.buttonForm{
+  background-color: black;
+  color: white;
+  border: 0;
+  border-radius: 1.5rem;
+  font-weight: bold;
+  padding: 1vh;
+  transition: 0.5s;
+}
+
+.buttonForm:hover{
+  background-color: #028df0;
+  color: white;
+  transform: scale(110%);
+}
